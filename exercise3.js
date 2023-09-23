@@ -17,7 +17,7 @@ const valData1todata2 = (nilai1, nilai2) => {
       }else {
         reject ("Poses gagal")
       }
-    }, 2500)
+    }, 8500)
     })
   }
 
@@ -46,16 +46,14 @@ const cariDanTampilkanData = (nilaiAwal, nilaiAkhir, dataArray) => {
     setTimeout (() => {
       const hasilPencarian = dataArray.filter((data) => data >= nilaiAwal && data <= nilaiAkhir);
       hasilPencarian.sort((a, b) => a - b);
-      const solve = 
-      console.log("Data yang sesuai:")
-      hasilPencarian.forEach((data) => {
-        console.log(data)
-      });
-      resolve(solve)
-      reject("")
+      if (hasilPencarian.length > 0) {
+        resolve(`data yang sesuai :${hasilPencarian}`)
+      } else {
+        reject("tidak ada data yang sesuai")
+      } 
     },3500)
-    })
-  }  
+  })
+}  
 
 const cekdtaa = async (nilai1,nilai2,nilaiArr) => {
   try {
