@@ -17,7 +17,7 @@ const names = [
     callback(limitedResult);
   }
   
-  function displayResults(results) {
+  const displayResults = (results) => {
     if (results.length === 0) {
       console.log("Tidak ada hasil yang ditemukan.");
     } else {
