@@ -6,28 +6,24 @@ const names = [
     "Ella", "Faith", "Olivia", "Penelope"
   ];
   
-  function searchName(keyword, limit, callback) {
-    // Menerapkan filter dengan callback function
+  const searchName = (keyword, limit, callback) => {
+    // filter name
     const result = names.filter((name) => name.toLowerCase().includes(keyword.toLowerCase()));
-  
-    // Memastikan jumlah hasil tidak melebihi batasan
-    const limitedResult = result.slice(0, limit);
-  
-    // Memanggil callback dengan hasil pencarian
-    callback(limitedResult);
+    // Limits the number displayed(Melimit jumlah yang ditampilkan)
+    const limitResult = result.slice(0, limit);  
+    callback(limitResult);
   }
   
   const displayResults = (results) => {
     if (results.length === 0) {
-      console.log("Tidak ada hasil yang ditemukan.");
+      console.log("No results found...");
     } else {
-      console.log("Hasil Pencarian:");
+      console.log("Result:");
       results.forEach((name) => {
         console.log(name);
       });
     }
   }
   
-  // Contoh penggunaan
-  searchName("an", 2, displayResults);
+  searchName("an", 5, displayResults);
   
