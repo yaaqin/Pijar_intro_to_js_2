@@ -37,10 +37,10 @@ const failValue = (firstValue, secondValue) => {
 const getFilterData = (firstValue, secondValue, varArray) => {
   return new Promise((resolve, reject) => {
     setTimeout (() => {
-      const hasilPencarian = varArray.filter((data) => data >= firstValue && data <= secondValue);
-      hasilPencarian.sort((a, b) => a - b);
-      if (hasilPencarian.length > 0) {
-        resolve(`data is Correct :${hasilPencarian}`)
+      const result = varArray.filter((data) => data >= firstValue && data <= secondValue);
+      result.sort((a, b) => a - b);
+      if (result.length > 0) {
+        resolve(`data is Correct :${result}`)
       } else {
         reject("there is no correct data")
       } 

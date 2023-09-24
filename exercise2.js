@@ -8,7 +8,7 @@ const names = [
   
   const searchName = (keyword, limit, callback) => {
     // filter name
-    const result = names.filter((name) => nama.toLowerCase().includes(keyword.toLowerCase()));
+    const result = names.filter((name) => name.toLowerCase().includes(keyword.toLowerCase()));
     // Limits the number displayed(Melimit jumlah yang ditampilkan)
     const limitResult = result.slice(0, limit);  
     callback(limitResult);
