@@ -12,3 +12,17 @@ fruits.forEach(function(fruit, array, test) {
   console.log(`Fruit at index ${nomor}: ${fruit}`);
 });
 
+
+const names = [
+  "Abigail", "Alexandra", "Alison",
+  "Amanda", "Angela", "Bella",
+  "Carol", "Caroline", "Carolyn",
+  "Deirdre", "Diana", "Elizabeth",
+  "Ella", "Faith", "Olivia", "Penelope"
+];
+
+const namahurufkecil = names.filter((name) => name.toLocaleLowerCase())
+
+console.log(namahurufkecil)
+
+
