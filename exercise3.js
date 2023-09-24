@@ -1,75 +1,68 @@
-const dataArray = [7, 2, 98, 72, 27, 74, 64];
-const nilaiAwal = 1;
-const nilaiAkhir = 10;
+const array = [7, 2, 98, 72, 27, 74, 64];
+const firstValue = 1;
+const lastValue = 10;
 
-
-
-
-
-
-// cariDanTampilkanData(1,10,dataArray)
-
-const valData1todata2 = (nilai1, nilai2) => {
+const isGoodValue = (firstValue, secondValue) => {
   return new Promise ((resolve,reject) => {
     setTimeout (() => {
-      if (nilai1 < nilai2) {
-        resolve ("nilai 1 dan 2 benar")
+      if (firstValue < secondValue) {
+        resolve ("first value and last value is Correct")
       }else {
-        reject ("Poses gagal")
+        reject ("failed...")
       }
     }, 8500)
     })
   }
 
-const cekArr = (arr) => {
+const checkArr = (array) => {
   return new Promise ((resolve,reject) => {
     setTimeout(() => {
-      if (arr.length >= 5) {
-        resolve("data array benar")
+      if (array.length >= 5) {
+        resolve("Array is Correct")
       } else {
-        reject("Jumlah angka dalam dataArray harus lebih dari 5")
+        reject("The number of Array must be more than 5")
       }
-    },2000)
+    },2500)
   })
   }
   
-const salahangka = (nilai1,nilai2) => {
-  if (nilai2 <= nilai1) {
-    console.log("nilai ke 2 harus lebih besar dari nilai pertama")
+const failValue = (firstValue, secondValue) => {
+  if (firstValue <= secondValue) {
+    console.log("Second value must be greater than the first value")
   }else {
     return ""
   }
 }
 
-const cariDanTampilkanData = (nilaiAwal, nilaiAkhir, dataArray) => {
+const getFilterData = (firstValue, secondValue, varArray) => {
   return new Promise((resolve, reject) => {
     setTimeout (() => {
-      const hasilPencarian = dataArray.filter((data) => data >= nilaiAwal && data <= nilaiAkhir);
+      const hasilPencarian = varArray.filter((data) => data >= firstValue && data <= secondValue);
       hasilPencarian.sort((a, b) => a - b);
       if (hasilPencarian.length > 0) {
-        resolve(`data yang sesuai :${hasilPencarian}`)
+        resolve(`data is Correct :${hasilPencarian}`)
       } else {
-        reject("tidak ada data yang sesuai")
+        reject("there is no correct data")
       } 
     },3500)
   })
 }  
 
-const cekdtaa = async (nilai1,nilai2,nilaiArr) => {
+const resultData = async (firstValue,secondValue,varArray) => {
   try {
-    console.log("pengecekan data...")
-    const array = await cekArr(nilaiArr)
-    const success = await valData1todata2(nilai1,nilai2)
-    const data = await cariDanTampilkanData(nilai1,nilai2,nilaiArr)
+    console.log("Checking Data...")
+    const array = await checkArr(varArray)
+    const success = await isGoodValue(firstValue, secondValue)
+    const data = await getFilterData(firstValue, secondValue, varArray)
     console.log(success)
     console.log(array)
     console.log(data)
     
   } catch (error) {
     console.log(error)
-    const fail = await salahangka(nilai1,nilai2)
+    const fail = await failValue(firstValue,secondValue)
     console.log(fail)
   }
 }
 
-cekdtaa(1,10,dataArray)
+resultData(1,10,array)
