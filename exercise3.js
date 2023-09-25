@@ -1,3 +1,5 @@
+//Print number in array
+
 const array = [7, 2, 98, 72, 27, 74, 64];
 const firstValue = 1;
 const lastValue = 10;

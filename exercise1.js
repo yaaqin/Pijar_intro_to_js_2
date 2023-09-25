@@ -5,7 +5,7 @@
 //yang ingin kita cek ada dalam variabel data terkait )
 
 const fruit = ["banana", "apple", "orange"]
-const hasCherry = fruit.includes("apple")
+const hasCherry = fruit.includes("apple") //true
 
 // console.log(hasCherry)
 
@@ -13,7 +13,7 @@ const hasCherry = fruit.includes("apple")
 //indexOf
 //used to find out the index order of a value in an array (digunakan untuk mengetahui urutan index suatu nilai yang ada pada pada suatu array)
 
-const index = fruit.indexOf("orange")
+const index = fruit.indexOf("orange") //2
 
 // console.log(index)
 
@@ -24,9 +24,9 @@ const index = fruit.indexOf("orange")
 //parameter ke 2 dimana parameter diisi dengan index nya)
 
 
-const slice = fruit.slice(2)
+const slice = fruit.slice(2)  
 
-console.log(slice)
+// console.log(slice)
 
 //4
 //substr
@@ -36,7 +36,7 @@ console.log(slice)
 //karakter yang diambil dari parameter pertama)
 
 const email = "yaqin.me@gmail.com"
-const substr = email.substr(9,5)
+const substr = email.substr(9,5) //gmail
 
 // console.log(substr)
 
@@ -64,7 +64,7 @@ const replace = email.replace("q","k")
 const studentName = "21"
 const age = "31"
 
-const concat = studentName.concat(age)
+const concat = studentName.concat(age) //2131
 
 // console.log(concat)
 
@@ -75,7 +75,7 @@ const concat = studentName.concat(age)
 const firstData = [1, 2, 3, 4, 5];
 const map = firstData.map((num) => num * 2);
 
-console.log(map);
+// console.log(map);
 
 //9
 //every
@@ -83,6 +83,8 @@ console.log(map);
 
 const numbers = [2, 4, 6, 9, 10];
 const every = numbers.every((num) => num % 2 === 0);
+
+console.log (every) //false
 
 //10
 //some
